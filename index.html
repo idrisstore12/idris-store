@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>إدريس ستور | متجر الهواتف والخدمات</title>
+
+  <meta name="description" content="إدريس ستور - متجر الهواتف والخدمات والتجارة الإلكترونية">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f5f7fa;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #22c55e;
+    }
+
+    .phone {
+      color: white;
+      text-decoration: none;
+      background: #16a34a;
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 25px auto;
+      padding: 45px 25px;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #d1d5db;
+      font-size: 18px;
+    }
+
+    .actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .green {
+      background: #22c55e;
+      color: white;
+    }
+
+    .dark {
+      background: white;
+      color: #111827;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 16px;
+      margin-bottom: 25px;
+      outline: none;
+    }
+
+    .brands {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 35px;
+    }
+
+    .brand {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      cursor: pointer;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .brand:hover {
+      transform: translateY(-3px);
+      border-color: #22c55e;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    }
+
+    .product-icon {
+      font-size: 55px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .company {
+      color: #16a34a;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .product h3 {
+      margin: 5px 0 10px;
+    }
+
+    .product p {
+      color: #6b7280;
+      font-size: 14px;
+      min-height: 45px;
+    }
+
+    .product button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 11px;
+      border: none;
+      border-radius: 9px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .order-box {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      margin-top: 45px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #16a34a;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact {
+      text-align: center;
+      background: #111827;
+      color: white;
+      padding: 35px 20px;
+      margin-top: 45px;
+    }
+
+    .contact a {
+      color: #4ade80;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0b1120;
+      color: #9ca3af;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">إدريس <span>ستور</span> 📱</div>
+
+    <a class="phone" href="tel:0112793692">
+      📞 0112793692
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>مرحبًا بك في إدريس ستور</h1>
+
+  <p>
+    الهواتف والخدمات والتجارة الإلكترونية في مكان واحد
+  </p>
+
+  <div class="actions">
+    <a href="#products" class="btn green">تصفح الهواتف</a>
+    <a href="#order" class="btn dark">إنشاء طلب</a>
+  </div>
+</section>
+
+<div class="container">
+
+  <h2 class="section-title">شركات الهواتف</h2>
+
+  <div class="brands" id="brands">
+    <div class="brand" onclick="filterBrand('الكل')">📱 الكل</div>
+    <div class="brand" onclick="filterBrand('Samsung')">Samsung</div>
+    <div class="brand" onclick="filterBrand('Apple')">Apple</div>
+    <div class="brand" onclick="filterBrand('Xiaomi')">Xiaomi</div>
+    <div class="brand" onclick="filterBrand('Redmi')">Redmi</div>
+    <div class="brand" onclick="filterBrand('HONOR')">HONOR</div>
+    <div class="brand" onclick="filterBrand('Huawei')">Huawei</div>
+    <div class="brand" onclick="filterBrand('OPPO')">OPPO</div>
+    <div class="brand" onclick="filterBrand('vivo')">vivo</div>
+    <div class="brand" onclick="filterBrand('Realme')">Realme</div>
+    <div class="brand" onclick="filterBrand('OnePlus')">OnePlus</div>
+    <div class="brand" onclick="filterBrand('Google')">Google</div>
+    <div class="brand" onclick="filterBrand('TECNO')">TECNO</div>
+    <div class="brand" onclick="filterBrand('Infinix')">Infinix</div>
+    <div class="brand" onclick="filterBrand('Motorola')">Motorola</div>
+    <div class="brand" onclick="filterBrand('Sony')">Sony</div>
+    <div class="brand" onclick="filterBrand('Nothing')">Nothing</div>
+    <div class="brand" onclick="filterBrand('Nokia')">Nokia</div>
+    <div class="brand" onclick="filterBrand('ZTE/Nubia')">ZTE / Nubia</div>
+  </div>
+
+  <section id="products">
+
+    <h2 class="section-title">الهواتف</h2>
+
+    <input
+      class="search"
+      id="search"
+      type="search"
+      placeholder="🔎 ابحث عن الهاتف أو الشركة..."
+      oninput="searchProducts()"
+    >
+
+    <div class="products" id="productsList">
+      <div class="product">
+        <div class="product-icon">📱</div>
+        <div class="company">إدريس ستور</div>
+        <h3>جاري تحميل الهواتف...</h3>
+        <p>يتم الآن الاتصال بقاعدة البيانات.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="order" class="order-box">
+
+    <h2 class="section-title">📝 إنشاء طلب داخل المتجر</h2>
+
+    <form id="orderForm">
+
+      <div class="form-group">
+        <label>اسم العميل</label>
+        <input id="customerName" required>
+      </div>
+
+      <div class="form-group">
+        <label>رقم الهاتف</label>
+        <input id="customerPhone" type="tel" required>
+      </div>
+
+      <div class="form-group">
+        <label>الموقع</label>
+        <input id="location" placeholder="المدينة / الحي" required>
+      </div>
+
+      <div class="form-group">
+        <label>الطلب</label>
+        <textarea id="request" required placeholder="اكتب الهاتف أو الخدمة التي تريدها"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>ملاحظات</label>
+        <textarea id="notes" placeholder="أي تفاصيل إضافية"></textarea>
+      </div>
+
+      <button class="submit" type="submit">
+        إرسال الطلب
+      </button>
+
+      <div id="message"></div>
+
+    </form>
+
+  </section>
+
+</div>
+
+<section class="contact">
+
+  <h2>📞 تواصل معنا</h2>
+
+  <p>اتصل بنا أو تواصل معنا عبر واتساب</p>
+
+  <br>
+
+  <a href="tel:0112793692">
+    📞 0112793692
+  </a>
+
+  <br><br>
+
+  <a
+    href="https://wa.me/249112793692"
+    target="_blank"
+  >
+    💚 واتساب إدريس ستور
+  </a>
+
+</section>
+
+<footer>
+  © 2026 إدريس ستور — جميع الحقوق محفوظة
+</footer>
+
+<script>
+
+const SUPABASE_URL =
+  "https://sxtehozxnbachauflpog.supabase.co";
+
+const SUPABASE_KEY =
+  "sb_publishable_DGNkZo5HllS5KPBFFINMZw_Lhn6jl77هنا
+let allProducts = [];
+
+async function loadProducts() {
+
+  try {
+
+    const response = await fetch(
+      SUPABASE_URL + "/rest/v1/products?select=*",
+      {
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": "Bearer " + SUPABASE_KEY
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("فشل الاتصال بقاعدة البيانات");
+    }
+
+    allProducts = await response.json();
+
+    displayProducts(allProducts);
+
+  } catch (error) {
+
+    document.getElementById("productsList").innerHTML = `
+      <div class="product">
+        <div class="product-icon">⚠️</div>
+        <h3>تعذر تحميل الهواتف</h3>
+        <p>تأكد من إضافة مفتاح Supabase الصحيح.</p>
+      </div>
+    `;
+
+  }
+
+}
+
+function displayProducts(products) {
+
+  const container =
+    document.getElementById("productsList");
+
+  if (!products.length) {
+
+    container.innerHTML = `
+      <div class="product">
+        <h3>لا توجد نتائج</h3>
+      </div>
+    `;
+
+    return;
+  }
+
+  container.innerHTML = products.map(product => `
+
+    <div class="product">
+
+      <div class="product-icon">
+        ${product.icon || "📱"}
+      </div>
+
+      <div class="company">
+        ${product.company}
+      </div>
+
+      <h3>
+        ${product.model}
+      </h3>
+
+      <p>
+        ${product.description || "متوفر للاستفسار"}
+      </p>
+
+      <button
+        onclick="askPrice('${escapeText(product.company)}','${escapeText(product.model)}')"
+      >
+        💬 استفسر عن السعر
+      </button>
+
+    </div>
+
+  `).join("");
+
+}
+
+function escapeText(text) {
+
+  return String(text)
+    .replace(/'/g, "\\'")
+    .replace(/"/g, '&quot;');
+
+}
+
+function askPrice(company, model) {
+
+  const message =
+    `السلام عليكم، أريد الاستفسار عن سعر ${company} ${model} من إدريس ستور.`;
+
+  const url =
+    "https://wa.me/249112793692?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, "_blank");
+
+}
+
+function filterBrand(brand) {
+
+  if (brand === "الكل") {
+
+    displayProducts(allProducts);
+    return;
+
+  }
+
+  const filtered =
+    allProducts.filter(
+      product => product.company === brand
+    );
+
+  displayProducts(filtered);
+
+}
+
+function searchProducts() {
+
+  const value =
+    document.getElementById("search").value
+      .toLowerCase()
+      .trim();
+
+  const filtered =
+    allProducts.filter(product =>
+      product.company.toLowerCase().includes(value) ||
+      product.model.toLowerCase().includes(value)
+    );
+
+  displayProducts(filtered);
+
+}
+
+document
+  .getElementById("orderForm")
+  .addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const message =
+      document.getElementById("message");
+
+    message.textContent = "جاري إرسال الطلب...";
+
+    const order = {
+
+      customer_name:
+        document.getElementById("customerName").value,
+
+      phone:
+        document.getElementById("customerPhone").value,
+
+      location:
+        document.getElementById("location").value,
+
+      request:
+        document.getElementById("request").value,
+
+      notes:
+        document.getElementById("notes").value
+
+    };
+
+    try {
+
+      const response = await fetch(
+        SUPABASE_URL + "/rest/v1/orders",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_KEY,
+            "Authorization": "Bearer " + SUPABASE_KEY,
+            "Prefer": "return=minimal"
+          },
+
+          body: JSON.stringify(order)
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("فشل إرسال الطلب");
+      }
+
+      message.textContent =
+        "✅ تم إرسال طلبك بنجاح، سنتواصل معك قريبًا.";
+
+      document.getElementById("orderForm").reset();
+
+    } catch (error) {
+
+      message.textContent =
+        "❌ حدث خطأ أثناء إرسال الطلب. حاول مرة أخرى.";
+
+    }
+
+  });
+
+loadProducts();
+
+</script>
+
+</body>
+                              </html>
